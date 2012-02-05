@@ -18,11 +18,11 @@
 
 ==========Download and installing==========
 
-First download the file (unitconverter.zip or unitconverter.tar.gz) and extract the files.
+First download the file (texinit.zip or texinit.tar.gz) and extract the files.
 
 Linux:
 	Type the following commands in a shell:
-		cd /PATH/TO/unitconverter/
+		cd /PATH/TO/texinit/
 		./install.sh	
 		# Eventual 'cp' to /usr/local/bin
 Windows:
