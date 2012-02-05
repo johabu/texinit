@@ -1,0 +1,36 @@
+=============================================================================
+	texinit.c
+	Developed by Johabu <http://johabu.spheniscida.de>; <http://github.com/johabu>
+	
+	This file is part of texinit.
+	texinit is free software; you can modify it or redistribute it 
+	under the terms of the GNU General Public License as published by
+	the Free Software Foundation <http://www.fsf.org>, either version 3,
+	or (at your option) any later version.
+	See <http://www.gnu.org/licenses> for the license, if you
+	haven't received a copy of it (GNU_GPL.txt).
+
+	texinit is distributed without any warranty!
+
+=============================================================================
+
+===================================README===================================
+
+==========Download and installing==========
+
+First download the file (unitconverter.zip or unitconverter.tar.gz) and extract the files.
+
+Linux:
+	Type the following commands in a shell:
+		cd /PATH/TO/unitconverter/
+		./install.sh	
+		# Eventual 'cp' to /usr/local/bin
+Windows:
+	Compile the files, e.g. with your Visual Studio Express or a Intel C/C++ compiler
+
+==========Use==========
+
+texinit is a simple tool which creates a simple Latex-document, especially the preamble.
+
+At the moment the project is in the phase of beginning. 
+=============================================================================
