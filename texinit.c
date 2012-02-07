@@ -19,10 +19,10 @@
 
 int show_help(void) {
 	printf("\t====================HELP====================\n\n"\
-		"texinit - program for generating TeX files.\n\n"\
+		"texinit - program for generating TeX files.\tversion 0.1.1\n\n"\
 		"USAGE:\n\t./texinit <file>\n"\
 		"Attention: If <file> already exists, the program will ALL DATA OVERWRITE!\n"\
-		"<file> must be a name without a file extension!\n\n");
+		"<file> must be a name without a file extension.\n\n");
 	return EXIT_FAILURE;
 }
 
@@ -36,14 +36,15 @@ int main(int argc, char *argv[]) {
 	if (argc == 1 || getopt(argv[1],"h") == 1) {
 		show_help();
 	}
-	FILE *datei;
+	FILE *texfile;
+	strncat(argv[1],".tex",40);
 	printf("\n\nOpen file: \"%s\" ...",argv[1]);
-	datei = fopen(strncat(argv[1],".tex",40), "w+");
-	if (datei == NULL) {
+	texfile = fopen(argv[1], "w+");
+	if (texfile == NULL) {
 		printf("\nError in opening\n");
 		return EXIT_FAILURE;
 	}
 	printf(" OK\n");
-	fclose(datei);
+	fclose(texfile);
 	return EXIT_SUCCESS;
 }
