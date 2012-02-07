@@ -19,7 +19,7 @@
 
 int show_help(void) {
 	printf("\t====================HELP====================\n\n"\
-		"texinit - program for generating TeX files.\tversion 0.1.1\n\n"\
+		"texinit - program for generating TeX files.\tversion 0.2.0\n\n"\
 		"USAGE:\n\t./texinit <file>\n"\
 		"Attention: If <file> already exists, the program will ALL DATA OVERWRITE!\n"\
 		"<file> must be a name without a file extension.\n\n");
