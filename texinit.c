@@ -44,7 +44,18 @@ int main(int argc, char *argv[]) {
 		printf("\nError in opening\n");
 		return EXIT_FAILURE;
 	}
-	printf(" OK\n");
+	printf(" OK\nWriting...");
+	fprintf(texfile,"\\documentclass[a4paper]{scrartcl}\n"\
+			"\\usepackage[english]{babel}\n"\
+			"\\usepackage[utf8]{inputenc}\n"\
+			"\\usepackage[t1]{fontenc}\n"\
+			"\\begin{document}\n"\
+			"\\author{#AUTHOR}\n"\
+			"\\title{#TITLE}\n"\
+			"\\maketitle\n"\
+			"\\tableofcontents\n"\
+			"\\end{document}");
+	printf(" Done.\nCreated file %s successfully\n\n",argv[1]);
 	fclose(texfile);
 	return EXIT_SUCCESS;
 }
