@@ -17,13 +17,12 @@
 #include <stdio.h>
 #include <string.h>
 
-int show_help(void) {
+void show_help(void) {
 	printf("\t====================HELP====================\n\n"\
 		"texinit - program for generating TeX files.\tversion 0.2.0\n\n"\
 		"USAGE:\n\t./texinit <file>\n"\
 		"Attention: If <file> already exists, the program will ALL DATA OVERWRITE!\n"\
 		"<file> must be a name without a file extension.\n\n");
-	return EXIT_FAILURE;
 }
 
 int getopt(char *argument, char *option) {
@@ -35,6 +34,7 @@ int getopt(char *argument, char *option) {
 int main(int argc, char *argv[]) {
 	if (argc == 1 || getopt(argv[1],"h") == 1) {
 		show_help();
+		return EXIT_FAILURE;
 	}
 	FILE *texfile;
 	strncat(argv[1],".tex",40);
@@ -45,17 +45,17 @@ int main(int argc, char *argv[]) {
 		return EXIT_FAILURE;
 	}
 	printf(" OK\nWriting...");
-	fprintf(texfile,"\\documentclass[a4paper]{scrartcl}\n"\
+	fprintf(texfile,"\\documentclass[a4paper, 12pt, DIVcalc]{scrartcl}\n"\
 			"\\usepackage[english]{babel}\n"\
 			"\\usepackage[utf8]{inputenc}\n"\
-			"\\usepackage[t1]{fontenc}\n"\
+			"\\usepackage[T1]{fontenc}\n"\
 			"\\begin{document}\n"\
-			"\\author{#AUTHOR}\n"\
-			"\\title{#TITLE}\n"\
+			"\\author{AUTHOR}\n"\
+			"\\title{TITLE}\n"\
 			"\\maketitle\n"\
 			"\\tableofcontents\n"\
 			"\\end{document}");
-	printf(" Done.\nCreated file %s successfully\n\n",argv[1]);
+	printf(" Done.\nCreated file %s successfully.\n\n",argv[1]);
 	fclose(texfile);
 	return EXIT_SUCCESS;
 }
