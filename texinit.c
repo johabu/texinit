@@ -99,4 +99,4 @@ int main(int argc, char *argv[]) {
 	printf(" Done.\nCreated file %s successfully.\n\n",argv[1]);
 	fclose(texfile);
 	return EXIT_SUCCESS;
-
+}
